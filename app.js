@@ -1,5 +1,5 @@
 let container = document.getElementById('container');
-createGrid(16);
+createGrid(4);
 
 function createGrid(divisions) {
     for (let i = 0; i < divisions; i++) {
@@ -9,6 +9,9 @@ function createGrid(divisions) {
         for (let j = 0; j < divisions; j++) {
             let divContainer = document.createElement('div');
             divContainer.classList.add('divContainer');
+            divContainer.addEventListener('mouseover', (event) => {
+                // highlight the mouseenter target
+                event.target.style.backgroundColor = "purple";});
             row.appendChild(divContainer);
         }
         container.appendChild(row);
@@ -23,3 +26,7 @@ buttonNewGrid.addEventListener("click",() => {
     let a = Number(document.getElementById('divisions').value);
     createGrid(a);
 });
+
+function changeColor(){
+    console.log('hola');
+}
