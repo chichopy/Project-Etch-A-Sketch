@@ -13,6 +13,10 @@
     flex: 1;
 }
 
+.divContainer:hover{
+    background-color: red;
+}
+
 .outer-container{
     display: flex;
     flex-grow: 0;

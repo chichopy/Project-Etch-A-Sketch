@@ -1,11 +1,10 @@
 let container = document.getElementById('container');
-let buttonNewGrid = document.getElementById('newGrid');
-fillContainer(16);
+createGrid(16);
 
-function fillContainer(divisions) {
+function createGrid(divisions) {
     for (let i = 0; i < divisions; i++) {
-        let row = document.createElement('div')
-        row.classList.add('row')
+        let row = document.createElement('div');
+        row.classList.add('row');
 
         for (let j = 0; j < divisions; j++) {
             let divContainer = document.createElement('div');
@@ -14,15 +13,13 @@ function fillContainer(divisions) {
         }
         container.appendChild(row);
     }
-    alert(divisions)
 }
 
-
+let buttonNewGrid = document.getElementById('newGrid');
 buttonNewGrid.addEventListener("click",() => {
-    let a = Number(document.getElementById('divisions').value);
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
-    fillContainer(a);
-    alert(a);
+    let a = Number(document.getElementById('divisions').value);
+    createGrid(a);
 });
