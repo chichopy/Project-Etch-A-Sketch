@@ -1,11 +1,11 @@
 .container{
+    border: 5px solid yellow;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     gap: 1px;
-    max-width: 500px;
     height: 500px;
-    border: 5px solid yellow;
+    max-width: 500px;
 }
 
 .divContainer{
@@ -13,21 +13,18 @@
     flex: 1;
 }
 
-/* .divContainer:hover{
-    background-color: red;
-} */
-
 .outer-container{
+    align-items: center;
     display: flex;
     flex-grow: 0;
     justify-content: center;
-    align-items: center;
 }
 
 .row{
+    background-color: aqua;
     display: flex;
     gap: 1px;
-    width: 100%;
     height: auto;
-    background-color: aqua;
+    width: 100%;
 }
+
