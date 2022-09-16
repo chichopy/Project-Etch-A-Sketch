@@ -1,15 +1,22 @@
 body{
     background-color: #efefef;
+    height: 100%;
+    margin: 0;
     padding: 40px 100px;
 }
 
-.buttons{
-    padding-top: 20px;
+.bottomPage{
     display: flex;
-    flex-grow: 0;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+.bottomPage .buttons{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+}
 
 .container{
     border: 5px solid yellow;
@@ -26,9 +33,20 @@ body{
     flex: 1;
 }
 
-h1{
+h1, footer{
     display: flex;
     justify-content: center;
+}
+
+footer a{
+text-decoration: none;
+color: black;
+white-space: pre;
+}
+
+footer a:hover{
+    cursor: pointer;
+    color: blue;
 }
 
 .outer-container{
@@ -45,4 +63,3 @@ h1{
     height: auto;
     width: 100%;
 }
-
