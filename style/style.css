@@ -1,3 +1,16 @@
+body{
+    background-color: #efefef;
+    padding: 40px 100px;
+}
+
+.buttons{
+    padding-top: 20px;
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+}
+
+
 .container{
     border: 5px solid yellow;
     display: flex;
@@ -13,6 +26,11 @@
     flex: 1;
 }
 
+h1{
+    display: flex;
+    justify-content: center;
+}
+
 .outer-container{
     align-items: center;
     display: flex;
@@ -21,7 +39,7 @@
 }
 
 .row{
-    background-color: aqua;
+    background-color: #efefef;
     display: flex;
     gap: 1px;
     height: auto;

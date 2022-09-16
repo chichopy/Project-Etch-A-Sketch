@@ -1,21 +1,26 @@
 const container = document.getElementById('container');
-let divContainer = null;
 let rgbColor = null;
-let row = null;
+
+
+displayH1(16);
+function displayH1(number){
+    const h1 = document.querySelector('h1');
+    h1.textContent = `Etch-a-Sketch  ${number} X ${number}`;
+}
+
 
 createGrid(16);
-
 function createGrid(divisions) {
-
-
     for (let i = 0; i < divisions; i++) {
-        row = document.createElement('div');
+        let row = document.createElement('div');
         row.classList.add('row');
         for (let j = 0; j < divisions; j++) {
             let divContainer = document.createElement('div');
             divContainer.classList.add('divContainer');
             divContainer = changeColor(divContainer);
             row.appendChild(divContainer);
+
+            // Removes gap considering number of divisions
             if (divisions > 25) {
                 container.style['gap'] = 0;
                 row.style['gap'] = 0;
@@ -31,15 +36,18 @@ function createGrid(divisions) {
 // Divides grid in new NxN where N is a number entered by the user
 let buttonNewGrid = document.getElementById('newGrid');
 buttonNewGrid.addEventListener("click",() => {
+    let divisions = Number(document.getElementById('divisions').value);
+        // Validate divisions
+        if (divisions < 1 || divisions > 100 || !Number.isInteger(divisions)) {
+            divisions = document.getElementById('divisions');
+            divisions.placeholder = 'limit of divisions: 100';
+            return;
+        }
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
-    let divisions = Number(document.getElementById('divisions').value);
-    if (divisions < 1 || divisions > 100 || !Number.isInteger(divisions)) {
-        divisions = document.getElementById('divisions');
-        divisions.placeholder = 'limit of divisions: 100';
-        divisions = 16;
-    }
+
+    displayH1(divisions);
     createGrid(divisions);
     rgbColor = null;
 });
@@ -66,6 +74,7 @@ function changeColor(divContainer){
     });
     return divContainer;
 }
+
 
 function getRandomColor() {
     let rColor = Math.floor(Math.random() * 256);
