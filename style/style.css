@@ -1,11 +1,24 @@
+body{
+    background-color: #efefef;
+    padding: 40px 100px;
+}
+
+.buttons{
+    padding-top: 20px;
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+}
+
+
 .container{
+    border: 5px solid yellow;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    gap: 10px;
-    max-width: 500px;
+    gap: 1px;
     height: 500px;
-    border: 5px solid yellow;
+    max-width: 500px;
 }
 
 .divContainer{
@@ -13,17 +26,23 @@
     flex: 1;
 }
 
+h1{
+    display: flex;
+    justify-content: center;
+}
+
 .outer-container{
+    align-items: center;
     display: flex;
     flex-grow: 0;
     justify-content: center;
-    align-items: center;
 }
 
 .row{
+    background-color: #efefef;
     display: flex;
-    gap: 10px;
-    width: 100%;
+    gap: 1px;
     height: auto;
-    background-color: aqua;
+    width: 100%;
 }
+
