@@ -1,5 +1,7 @@
 const container = document.getElementById('container');
 let rgbColor = null;
+let buttonNewGrid = document.getElementById('newGrid');
+buttonNewGrid.addEventListener("click", newGrid); 
 
 
 displayH1(16);
@@ -34,23 +36,22 @@ function createGrid(divisions) {
 }
 
 // Divides grid in new NxN where N is a number entered by the user
-let buttonNewGrid = document.getElementById('newGrid');
-buttonNewGrid.addEventListener("click",() => {
+function newGrid(){
     let divisions = Number(document.getElementById('divisions').value);
         // Validate divisions
         if (divisions < 1 || divisions > 100 || !Number.isInteger(divisions)) {
             divisions = document.getElementById('divisions');
             divisions.placeholder = 'limit of divisions: 100';
+            // This return avoids the front-end to change if the input is invalid
             return;
         }
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
-
     displayH1(divisions);
     createGrid(divisions);
     rgbColor = null;
-});
+}
 
 
 function changeColor(divContainer){
